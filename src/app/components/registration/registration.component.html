@@ -1,0 +1,15 @@
+<div class="registration-page">
+  <div class="wrapper">
+    <p class="auth-text">Who are you?</p>
+    <div class="form-wrapper">
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Type your name</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+      </form>
+      <mat-icon class="thumb-up-icon" (click)="onSubmit()">thumb_up</mat-icon>
+    </div>
+  </div>
+</div>
+

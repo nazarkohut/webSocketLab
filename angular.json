@@ -27,9 +27,10 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
-            "scripts": [build => options => scripts]
+            "scripts": ["SDK/crypt.js", "SDK/index.js", "SDK/socket.io.js", "SDK/utils.js"]
           },
           "configurations": {
             "production": {
@@ -94,6 +95,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
             "scripts": []
