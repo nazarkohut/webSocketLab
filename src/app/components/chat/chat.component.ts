@@ -67,45 +67,29 @@ export class ChatComponent implements OnInit {
     const password = this.cookie.get('password')
     this.chat.SDK.login(username, password).then((_: any) => {
       this.chat.SDK.sendTextMessage(this.data.Jid, this.form.value.message).then((data: any) => {
-        console.log("Message to new user", data);
+        // console.log("Message to new user", data);
         if(data.statusCode === 200){
           this.chatMessages.unshift(this.form.value.message)
-          // this.ngOnInit()
         }
       })
     })
-    // chatType: "chat"
-    // fromUserId: "ki55hmm49d"
-    // fromUserJid: "ki55hmm49d@xmpp-preprod-sandbox.mirrorfly.com"
-    // msgBody: {message: 'r', message_type: 'text', nickName: '57', utcTimestamp: 1653931508468}
-    // msgId: "f06469cb-0997-4672-9b43-e9126c5714a2"
-    // msgStatus: 1
-    // msgType: "receiveMessage"
-    // publisherId: "ki55hmm49d"
-    // publisherJid: "ki55hmm49d@xmpp-preprod-sandbox.mirrorfly.com"
-    // timestamp: 1653942311597372
-    // toUserId: "r814qnf748"
-    // toUserJid: "r814qnf748@xmpp-preprod-sandbox.mirrorfly.com"
   }
 
   ngOnChanges() {
-    // messageListener.call().subscribe()
-    // messageListener.OnCha
-    // messageListener.subscribe();
     const username = this.cookie.get('username')
     const password = this.cookie.get('password')
     this.chat.SDK.login(username, password).then((data: any) => {
-      console.log("JIDJIDJIDJIDJDIJDIJIDDI", this.data.Jid);
+      // console.log("JIDJIDJIDJIDJDIJDIJIDDI", this.data.Jid);
       let chatMessages: Array<string> = [];
       this.chat.SDK.getChatMessages(this.data.Jid).then((messagesResp: any) => {
         const messages = messagesResp.data;
         messages.forEach((message: ParticularChat) => {
-          console.log("message", message.msgBody.message)
+          // console.log("message", message.msgBody.message)
           chatMessages.push(message.msgBody.message);
         })
         this.chatMessages = chatMessages;
       })
-      console.log("this chat MESSAGES", this.chatMessages);
+      // console.log("this chat MESSAGES", this.chatMessages);
     })
   }
 }

@@ -88,7 +88,7 @@ export class ChatsComponent implements OnInit {
         // let chatsNickNames: Array<string> = [];
 
         data.data.forEach(chat => {
-          console.log("chat", chat);
+          // console.log("chat", chat);
           let currentChatData = {nickName: '', Jid: chat.fromUserId + domain}
           this.chat.SDK.getUserProfile(currentChatData.Jid).then((data: { data: UserProfile }) => {
             // const currNickName = data.data.nickName;
@@ -97,8 +97,7 @@ export class ChatsComponent implements OnInit {
           })
           chatsData.push(currentChatData);
         });
-        this.chatsData = chatsData;//.filter(data => data.nickName);
-        // this.chatsNickNames = chatsNickNames;
+        this.chatsData = chatsData;
         console.log(this.chatsData)
       });
     })

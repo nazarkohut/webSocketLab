@@ -46,19 +46,7 @@ export class RegistrationComponent implements OnInit {
     this.chat.SDK.register(`${username}`).then((data: any) => {
       console.log(data)
       this.registerData = data.data;
-      // this.router.navigate(['chat']);
       return data.data;
-      // console.log("registerdata", this.registerData)
-      // this.chat.SDK.login(this.registerData.username, this.registerData.password).then((data: any) => {
-      //   console.log('login', data)
-      //   this.chat.SDK.setUserProfile(`NAME`, `IMAGE`, `STATUS`, `MOBILE_NUMBER`, `EMAIL`).then((data: any) => {
-      //     console.log("profile", data)
-      //   this.chat.SDK.syncContacts(this.form.value.username).then((data: any) => {
-      //     console.log("sync Contacts", data)
-      //     const userJid = this.chat.SDK.getCurrentUserJid().userJid
-      //     console.log("USERJID1231", userJid)
-      //     console.log("profile", this.chat.SDK.getUserProfile(userJid))
-      //   });
     }).then((data: any) => {
       this.cookie.set('token', data.token)
       this.username = data.username;
@@ -68,7 +56,6 @@ export class RegistrationComponent implements OnInit {
         this.chat.SDK.setUserProfile(this.form.value.username, `IMAGE`, `STATUS`, `MOBILE_NUMBER`, `EMAIL`).then((data: any) => {
           console.log("Setting profile", data)
         });
-        // this.chat.SDK.syncContacts(this.username);
         this.cookie.set("username", this.username, 240000000);
         this.cookie.set("password", this.password, 240000000);
         this.router.navigate(['chat']).then((data: any) => {
