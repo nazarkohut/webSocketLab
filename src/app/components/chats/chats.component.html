@@ -1,0 +1,17 @@
+<div class="chats-content">
+  <div class="wrapper">
+    <div class="chats-wrapper">
+      <form class="message-chat-form" [formGroup]="addForm" (submit)="onSubmit()" >
+        <mat-form-field class="message-chat-field" appearance="fill">
+          <mat-label>Enter JID</mat-label>
+          <input matInput autocomplete="off" placeholder="Use JID to add another user(chat)" formControlName="Jid" class="add_user_field">
+        </mat-form-field>
+      </form>
+      <mat-card *ngFor="let data of chatsData" class="particular-chat" (click)="toggleChild(data)">{{data.nickName}}</mat-card>
+    </div>
+    <ng-container *ngIf="showVar">
+      <app-chat [data]="this.chatData" [showMePartially]="this.showVar"></app-chat>
+    </ng-container>
+  </div>
+</div>
+

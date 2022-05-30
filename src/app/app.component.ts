@@ -1,7 +1,12 @@
 import {Component} from '@angular/core';
 import {ChatSupportService} from "./services/chat-support.service";
 import {LICENCE_KEY} from "../config";
+import {Subject} from "rxjs";
 export declare var SDK: any;
+
+export const obs = new Subject();
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,12 +27,16 @@ export class AppComponent {
     const friendsListListener = (response: any) => {
       console.log("Friends List", response);
     };
+    const messageListener = (response: any) => {
+      console.log("Parashs", response)
+      obs.next(response)
+    };
     const userProfileListener = (response:any) => {
       console.log("User Profile Details Listener", response);
     };
-    const messageListener = (response: any) => {
-      console.log("Message Listener", response);
-    };
+    // const messageListener = (response: any) => {
+    //   console.log("Message Listener", response);
+    // };
     const replyMessageListener = () => {
     };
     const favouriteMessageListener = () => {
@@ -79,6 +88,5 @@ export class AppComponent {
     };
     SDK.initializeSDK(initializeObj)
     this.chat.SDK = SDK;
-
   }
 }

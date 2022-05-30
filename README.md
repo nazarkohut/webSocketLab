@@ -1,4 +1,7 @@
-# WebsocketsLab
+# webSocketLab
+This repository contains project for university as a part of web applications and web design course
+
+# Angular setup 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 

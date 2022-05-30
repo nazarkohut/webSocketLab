@@ -1,0 +1,45 @@
+.chats-content {
+  height: 100%;
+}
+
+.particular-chat {
+  /*background: rgb(240, 250, 240);*/
+  background-color: #673ab7;
+  /*background-color: mediumpurple;*/
+  color: rgb(240, 250, 240);
+}
+
+.particular-chat:hover {
+  background-color: rgb(250, 255, 255);
+  color: black;
+  cursor: pointer;
+}
+
+.chats-wrapper {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  /*gap: 15px;*/
+  background-color: mediumpurple;
+  height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  /*gap: 1%;*/
+}
+
+::ng-deep .mat-card {
+  border-radius: 0 !important;
+}
+
+::ng-deep .mat-form-field-flex {
+  min-width: 150px;
+  /*width: 300px !important;*/
+  max-width: 100%;
+}
+
+.message-chat-field {
+  /*background-color: aliceblue;*/
+}
+

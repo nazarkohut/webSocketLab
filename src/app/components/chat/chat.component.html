@@ -1,0 +1,20 @@
+<div *ngIf="showMePartially" class="chat-wrapper">
+  <mat-toolbar color="primary">
+    <button mat-icon-button>
+      <mat-icon>face icon</mat-icon>
+    </button>
+    <span>{{data.nickName}}</span>
+  </mat-toolbar>
+  <div class="chat-messages-wrapper">
+    <div class="chat-messages">
+      <p class="chat-message" *ngFor="let i of this.chatMessages.reverse()">{{i}}</p>
+    </div>
+  </div>
+
+  <form class="message-chat-form" [formGroup]="form" (submit)="onSubmit()" >
+    <mat-form-field class="message-chat-field" appearance="fill">
+      <mat-label>Enter message</mat-label>
+      <input matInput autocomplete="off" placeholder="Please, be nice in chat..." formControlName="message">
+    </mat-form-field>
+  </form>
+</div>
